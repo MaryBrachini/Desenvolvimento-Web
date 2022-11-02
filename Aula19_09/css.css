@@ -1,0 +1,21 @@
+body {
+    background-color: lightblue;
+    background-image: url("furao.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+
+.d1 {
+    background-color: lightcoral;
+}
+
+.d2 {
+    background-color: lightgreen;
+}
+
+.d3 {
+    background-image: url("furao.png");
+    color: white;
+    background-color: rgb(59, 56, 56);
+    background-size: 40px;
+}

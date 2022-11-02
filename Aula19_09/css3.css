@@ -1,0 +1,14 @@
+div:hover {
+    background-color: rgb(231, 107, 107);
+  }
+  .divlin {
+    border: black 1px solid;
+}
+
+.pbranco {
+    background-color: white;
+}
+
+h2 {
+    text-align: center;
+}
