@@ -1,0 +1,90 @@
+.t1 {
+    border: 1vw solid black;
+    background-color: white;
+    width: 65%;
+    font-size: 2vw;
+
+}
+
+.t2 {
+    border: 8px solid black;
+    background-color: white;
+    width: 1000px;
+    font-size: 20pt;
+
+}
+
+.b1 {
+    background-color: lightblue;
+}
+
+.b3 {
+    background-color: gray;
+}
+
+.b2 {
+    background-image: url('fundo.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.ll1 {
+    background-color: lightgreen;
+    border-bottom: 10px solid white;
+    border-top: 10px solid white;
+}
+
+.ll2 {
+    background-color: lightcoral;
+    border-bottom: 10px solid white;
+    border-top: 10px solid white;
+}
+
+img {
+    padding: 10px;
+}
+
+.d1 {
+    border: 10px solid black;
+    border-radius: 15px;
+    background-color: blue;
+    padding: 1%;
+    margin-left: 10%;
+    padding-right: 5%;
+    margin-right: 3%;
+    text-align: justify;
+    color: white;
+}
+
+.d2 {
+    border: 10px solid black;
+    border-radius: 15px;
+    background-color: red;
+    padding: 1%;
+    margin-right: 10%;
+    margin-left: 3%;
+    padding-left: 5%;
+    text-align: justify;
+    color: white;
+}
+
+.cu {
+    background-color:  rgb(40, 247, 40);
+    padding: 1px 5px 1px 5px;
+    color: #000;
+}
+
+.mark {
+    background-color: rgb(160, 100, 216);
+}
+
+.cu2 {
+    background-color: rgb(88, 247, 40);
+    padding: 1px 5px 1px 5px;
+    color: #000;
+
+}
+
+.mark2 {
+    background-color: rgb(145, 18, 134);
+}

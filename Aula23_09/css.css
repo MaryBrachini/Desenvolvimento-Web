@@ -1,0 +1,43 @@
+.b1 {
+    background-color: lightgreen;
+    border: 5px dotted green;
+    padding: 1%;
+}
+
+.b2 {
+    background-color: gray;
+    border: 5px double lightgrey;
+    padding: 1%;
+}
+
+.b3 {
+    background-color: lightcoral;
+    border: 5px dashed red;
+    padding: 1%;
+}
+
+.b4 {
+    background-color: lightblue;
+    border: 5px solid blue;
+    padding: 1%;
+}
+
+.t1 {
+    border-left: 5px solid lightcoral;
+    background-color: lightblue;
+    padding: 2%;
+}
+
+.ponto {
+    border: 5px dotted purple;
+}
+
+.dupla {
+    width: 500px;
+    border: 8px double rgb(214, 19, 214);
+}
+
+.principal {
+    padding-left: 10%;
+    padding-right: 10%;
+}
