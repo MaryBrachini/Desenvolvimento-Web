@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <title>Formulario</title>
+
+</head>
+
+<body class="container w-75 mt-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Menu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="P1.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="P2.html">Formulario</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="P3.html">Sobre</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+      
+    <h1>Formulario com Bootstrap</h1>
+
+    <form class="mt-3">
+        <div>
+            <div class="input-group">
+                <div class="form-floating">
+                    <label for="floatingInputGrid">Nome: </label>
+                    <input type="text" name="pnome" id="pnome" class="form-control">
+                </div>
+                <div class="form-floating">
+                    <label for="snome">Sobrenome: </label>
+                    <input type="text" name="snome" id="snome" class="form-control">
+                </div>
+            </div>
+            <br>
+            <div class="form-floating">
+                <input type="date" name="dt" id="dt" class="form-control">
+                <label for="floatingInputGrid">Data do Pedido</label>
+            </div>
+            <br>
+            <div class="form-floating">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" id="floatingInputGrid">
+            </div> <br>
+            <div class="form-floating">
+                <label for="tel">Telefone</label>
+                <input type="tel" name="tel" id="tel" class="form-control" minlength="10" maxlength="11">
+            </div>
+            <br>
+            <div class="input-group">
+                <select name="mat" id="mat" class="form-select">
+                    <option value="" selected disabled>Selecione o material</option>
+                    <option value="mouse">Mouse</option>
+                    <option value="teclado">Teclado</option>
+                    <option value="monitor">Monitor</option>
+                    <option value="estabilizador">Estabilizador</option>
+                    <option value="caboenergia">Cabo de Energia</option>
+                    <option value="cabovga">Cabo VGA</option>
+                </select>
+                <input type="number" name="qtd" id="qtd" min="1" max="10" class="form-control" placeholder="Quantidade">
+            </div>
+            <br>
+            <label for="" name="ft" id="ft" class="form-text">Foto do problema: </label>
+            <input type="file" name="ft" id="ft" class="form-control">
+            <br>
+            <label for="" name="urls" id="urls" class="form-text">URL: </label>
+            <input type="url" name="urls" class="form-control">
+            <br>
+            <div class="input-group 'row justify-content-evenly">
+                <div class="col-3">
+                    <label for="">Prioridade do pedido: </label><br>
+                    <label for="alto" name="alto" id="alto">Alto</label>
+                    <input type="radio" name="prioridade" id="alto">
+                    <label for="medio" name="medio" id="medio">Médio</label>
+                    <input type="radio" name="prioridade" id="medio">
+                    <label for="alto" name="baixo" id="baixo">Baixo</label>
+                    <input type="radio" name="prioridade" id="baixo">
+                </div>
+                <div class="col-4">
+                    <label for="horarios">Horários disponiveis:</label><br>
+                    <input type="checkbox" name="antes" id="antes">
+                    <label for="antes">Antes das 11h</label>
+                    <input type="checkbox" name="durante" id="durante">
+                    <label for="durante">Entre as 11h e 13h</label>
+                    <input type="checkbox" name="depois" id="depois">
+                    <label for="depois">Depois das 13h</label>
+                </div>
+                <div class="row col-4">
+                    <input class="btn btn-primary mb-2" type="submit" value="Enviar">
+                    <input class="btn btn-outline-danger mb-5" type="reset" value="Limpar">
+                </div>
+            </div>
+        </div>
+        <a href="P1.html">Proxima</a>
+    </form>
+</body>
+
+</html>
