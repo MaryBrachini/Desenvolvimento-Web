@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Site</title>
+        <style>
+            dt{
+                padding-bottom: 1%
+            }
+        </style>
+    <body>
+        <h1>Praticando 1 - JavaScript</h1>
+
+        <h2>Seja Bem-vinde <span id="nome"></span></h2>
+
+        <button type="button"  onclick="myFunctionAdd()">
+            Adicionar um novo paragrafo.
+        </button>
+
+        <button type="button"  onclick="myFunctionRemover()">
+            Remover todos os paragrafos
+        </button>
+
+        <dl id="demo">
+
+        </dl>
+
+        <a href="P2.html">Praticando 2</a>
+
+
+        <script>
+            //Inserir nome no texto
+            let person = prompt("Qual seu nome?");
+            if (person != null) {
+                document.getElementById("nome").innerHTML =
+                        person + "!";
+            }
+
+            //Adicionar texto
+            function myFunctionAdd() {
+                // Cria um "dt"
+                const node = document.createElement("dt");
+                // Cria um texto:
+                const textnode = document.createTextNode("Lorem ipsum, or lipsum as it is \n\
+                sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is \n\
+                attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of \n\
+                Ciceros De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with");
+                // Anexa o elemento com o texto
+                node.appendChild(textnode);
+                // Anexa a união no id
+                document.getElementById("demo").appendChild(node);
+            }
+
+            //Remover texto
+            function myFunctionRemover() {
+                const list = document.getElementById("demo");
+                while (list.hasChildNodes()) {
+                    list.removeChild(list.firstChild);
+
+                }
+            }
+        </script>
+    </body>
+</html> 
