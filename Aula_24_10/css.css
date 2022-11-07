@@ -1,0 +1,62 @@
+.myDiv {
+    width: 1100px;
+    padding: 10px;
+    text-align: justify;
+    text-indent: 0%;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    margin: 50px;
+    justify-content: flex-end;
+
+}
+
+tr {
+    margin: 0;
+    display: flex;
+}
+
+table {
+    padding: 10px;
+}
+
+td {
+
+    width: 200px;
+    height: 100px;
+    border: solid 2px;
+    text-align: center;
+
+}
+
+* {
+    margin: 0;
+}
+
+.verm {
+    background-color: red;
+}
+
+.verd {
+    background-color: green;
+}
+
+.azu {
+    background-color: blue;
+}
+
+.ama {
+    background-color: yellow;
+}
+
+.ros {
+    background-color: rgb(223, 18, 206);
+}
+
+input {
+    width: 200px;
+    height: 3vw;
+    border: solid 2px;
+}
