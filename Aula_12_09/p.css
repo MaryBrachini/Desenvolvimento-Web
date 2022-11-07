@@ -1,0 +1,27 @@
+body{
+    background-color: gray;
+}
+p{
+    text-align: justify;
+    text-indent: 35px;
+}
+.d2{
+   margin: 20px;
+   padding: 10px;
+   background-color: lightcoral;
+   border: solid 5px blue;
+}
+.d1{
+   margin: 20px;
+   padding: 10px;
+   background-color: lightskyblue;
+   border: solid 5px red;
+}
+.span{
+    color: red;
+    font-weight: bold;
+}
+.span2{
+    color: blue;
+    font-weight: bold;
+}
