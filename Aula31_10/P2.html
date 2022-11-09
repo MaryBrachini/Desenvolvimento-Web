@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css.css">
+        <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.min.css">
+        <title>Site</title>
+    </head>
+
+    <body class="fundo">
+        <div class="container2">
+
+            <h1 style=" text-align: center;">Formulario com validação</h1>
+
+            <form class="was-validated">
+
+                <div class="row">
+                    <div class="col-6">
+                        <label for="validationTextarea" class="form-label">Nome:</label>
+                        <input type="text" class="form-control is-invalid" id="validationTextarea" required>
+                    </div>
+
+                    <div class="col-6">
+                        <label for="validationTextarea" class="form-label">Email:</label>
+                        <input type="email" class="form-control is-invalid" id="validationTextarea" required>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-4">
+                        <label for="validationTextarea" class="form-label">Telefone:</label>
+                        <input type="tel" class="form-control is-invalid" id="validationTextarea" required>
+                    </div>
+
+                    <div class="col-8">
+                        <label for="validationTextarea" class="form-label">Carro:</label>
+                        <select class="form-select" required aria-label="select example">
+                            <option value="">Escolha um</option>
+                            <option value="1">Primeiro</option>
+                            <option value="2">Segundo</option>
+                            <option value="3">Terceiro</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+
+                <div>
+                    <label for="validationTextarea" class="form-label">Sobre</label>
+                    <textarea class="form-control is-invalid" id="validationTextarea" required></textarea>
+                </div>
+
+                <br>
+                <br>
+
+                <div>
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                    <button class="btn btn-primary" type="submit">Limpar</button>
+                </div>
+                
+                <br>
+                <br>
+                <a href="P3.html">Praticando 3</a>
+            </form>
+        </div>
+
+    </body>
+
+</html>
