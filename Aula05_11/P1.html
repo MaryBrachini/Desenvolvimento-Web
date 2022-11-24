@@ -5,47 +5,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <title>Site</title>
+    <style>
+    tr:hover {background-color: rgb(207, 218, 204);}
+    </style>
 </head>
 
 <body>
+
     <div class="container">
         <h1>Atividade - JavaScript Ajax com JSON</h1>
-
 
         <div class="row">
             <div class="col-4">
 
-                <div class="row mb-2">
-                    <label for="nome" class="col-sm-3 col-form-label">Nome:</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="nome">
-                    </div>
-                </div>
+                <form>
 
-                <div class="row mb-2">
-                    <label for="email" class="col-sm-3 col-form-label">Email:</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="email">
+                    <div class="row mb-2">
+                        <label for="nome" class="col-sm-2 col-form-label">Nome:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="nome" type="text" />
+                        </div>
                     </div>
-                </div>
+                    <div class="row mb-2">
+                        <label for="email" class="col-sm-2 col-form-label">Email:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="email" type="email" />
+                        </div>
+                    </div>
 
-                <div class="row my-3">
-                    <div class="col-sm-12 text-center">
-                        <input type="button" class="btn btn-primary" id="btnSubmit" value="Gravar">
-                        <input type="button" class="btn btn-warning" id="btnReset" value="Limpar">
+                    <div class="row my-3">
+                        <div class="col-sm-12 text-center">
+                            <button id="gravar" type="submit" class="btn btn-primary">Gravar</button>
+                            <button id="resetar" type="reset" class="btn btn-warning">Limpar</button>
+                        </div>
+                    </div>
+
+                </form>
+
+
+                <div class="col-sm-12 text-center">
+                    <div id="container-sucesso" class="alert alert-success" role="alert">
+                        Dados gravados com sucesso!!!!
                     </div>
                 </div>
 
                 <div class="row my-4" id="divAlerts">
-                    <div class="col-sm-12 text-center">
-                        <br>
-                        <input type="button" id="btnRefresh" class="btn btn-info" value="Atualizar Tabela">
+                    <div class="row d-flex col-sm-12 text-center">
+                        <button id="atualizar" class="btn btn-info">Atualizar dados da tabela</button>
                     </div>
                 </div>
             </div>
+
             <div class="col-8">
                 <table class="table table-bordered table-striped">
                     <thead>
@@ -55,78 +72,61 @@
                             <th scope="col" style="width:10%;" class="text-center"></th>
                         </tr>
                     </thead>
-                    <tbody class="table-group-divider lista">
+                    <tbody class="table-group-divider" id="tbody">
                     </tbody>
                 </table>
+
             </div>
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
-            function getData() {
-                /* 28 linhas?*/
-            }
-
-            function resetForm() {
-                /* 3 linhas?*/
-            }
-
-            $('#btnSubmit').click(function () {
-                /* 25 linhas?*/
-                var nome = $('#nome').val();
-                var email = $('#email').val();
-
-                $.ajax({
-                    url: 'https://epansani.com.br/2022/dw1s4/ajax/ins.php',
-                    method: 'post',
-                    data: { nome: nome, email: email },
-                    datatype: 'json'
-                }).done(function (result) {
-                    $('#nome').val('');
-                    $('#email').val('');
-                    console.log(result);
-                    getData();
-                });
+        $("#container-sucesso").attr("style", "display: none !important");
+        const apagar = (id) => {
+            const dataToSend = { id };
+            $.post("https://epansani.com.br/2022/dw1s4/ajax/rem.php", dataToSend, (res) => {
+                if (res == "true") {
+                    $(`#tb-${id}`).remove();
+                }
             });
+        }
 
-
-            $('#btnRefresh').click(function () {
-                /* 3 linhas?*/
-
-                $.ajax({
-                    url: 'https://epansani.com.br/2022/dw1s4/ajax/ins.php',
-                    method: 'get',
-                    datatype: 'json'
-                }).done(function (result) {
-                    console.log(result);
-
-                    for (var i = 0; i < result.length; i++) {
-                        $('.lista').prepend('<tr><th scope="col" style="width:50%;">' + result[i].nome +
-                            '</th><th scope="col" style="width:40%;">' + result[i].email +
-                            '</th><th scope="col" style="width:10%;" class="text-center"><input type="button" class="btn btn-danger" id="btnDelete" value="Apagar"></th></tr>');
-                    }
-                });
-            })
-            $('#btnReset').click(function () {
-                /* 3 linhas?*/
+        $("#gravar").click((e) => {
+            e.preventDefault();
+            const dataToSend = {
+                nome: $("#nome").val(),
+                email: $("#email").val()
+            };
+            $.post("https://epansani.com.br/2022/dw1s4/ajax/ins.php", dataToSend, (res) => {
+                if (res == "true") {
+                    $("#container-sucesso").attr("style", "display: flex !important");
+                }
             });
+        });
 
+        $("#atualizar").click(() => {
+            $.get("https://epansani.com.br/2022/dw1s4/ajax/list.php", (res) => {
+                res = JSON.parse(res);
+                $("tbody").empty();
+                for (const data of res) {
+                    $("tbody").append(`
+                    <tr id=tb-${data.id}>
+                        <td>${data.nome}</td>
+                        <td>${data.email}</td>
+                        <td class="col-1">
+                            <button class="btn bg-danger text-white apagar" id=${data.id} onclick="apagar(event.target.id)">Apagar</button>
+                        </td>
+                    </tr>
+                    `);
+                }
+            });
+        });
 
-            $('#btnDelete').click(function () {
-                $.ajax({
-                    url: 'https://epansani.com.br/2022/dw1s4/ajax/list.php',
-                    type: 'DELETE',
-                    success: function (result) {
-                        alert(result);
-                    }
-                });
-            }); u
-
-            getData();
+        $("#resetar").click(() => {
+            $("#container-sucesso").attr("style", "display: none !important");
+            $('#nome').val('');
+            $('#email').val('');
         });
     </script>
 </body>
-
 </html>
