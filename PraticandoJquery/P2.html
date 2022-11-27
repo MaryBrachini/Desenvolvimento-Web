@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 3</title>
+    <script src="jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="css.css">
+
+</head>
+
+<body id="body">
+    <h1 class="h1">Praticando 3 </h1>
+
+    <div class="cores">
+        <div class="vermelho"></div>
+        <div class="verde"></div>
+        <div class="azul"></div>
+        <div class="amarelo"></div>
+        <div class="roxo"></div>
+    </div>
+
+    <button class="botao">Reset</button>
+
+    <br>
+
+    <a href="P3.html">Praticando 3</a>
+
+
+    <script>
+        var corArmazenada = "";
+        var corAtual = "";
+        var corAtual2 = "";
+        var clicado = false;
+
+        $(".cores > div").click(function () {
+            let cor = $(this).css("background-color");
+
+            $("body").css("backgroundColor", cor);
+            clicado = true;
+        });
+
+        $(".cores > div").mouseover(function () {
+            let cor = $(this).css("background-color");
+            $("body").css("backgroundColor", cor);
+
+            if (cor != corAtual) {
+                corArmazenada = corAtual;
+            }
+            corAtual = cor;
+        });
+
+        $(".cores > div").mouseout(function () {
+            if (clicado == false) {
+                $("body").css("background-color", corArmazenada);
+            }
+            clicado = false;
+        });
+
+        $("button").click(function () {
+            corArmazenada = "white";
+            $("body").css("background-color", corArmazenada);
+            corAtual = "";
+        });
+
+    </script>
+</body>
+
+</html>

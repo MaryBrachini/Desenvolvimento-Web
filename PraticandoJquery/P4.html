@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
+    <title>Praticando 3</title>
+    <script src="jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body onkeydown="movimentar(event)">
+    <h1>Praticando 3 - JavaScript parte III</h1>
+
+    <h2 class="mt-4">"Mini-game JS"</h2>
+
+    <p class="text-decoration-underline mt-4 fs-3">Instruções</p>
+
+    <p class="mt-4 fs-5">1. Clique em um dos quadrados coloridos.</p>
+
+    <p class="mt-4 fs-5">2. Depois use as teclas W A S D para movimentar os elementos para cima, esquerda, baixo e
+        direita respectivamente.</p>
+
+    <br>
+
+    <a href="P1.html">Praticando 1</a>
+
+    <br>
+
+    <div class="d-flex justify-content-center mt-4">
+        <img src="wasd.jpg" alt="Botões para movimentar">
+    </div>
+
+    <div class="d-flex" id="cores">
+        <div class="caixa" id="azul"></div>
+        <div class="caixa" id="amarelo"></div>
+        <div class="caixa" id="rosa"></div>
+    </div>
+
+    <script>
+        var selecionado;
+        var corSelecionado;
+        var coordenadaVertical = 0;
+        var coordenadaHorizontal = 0;
+
+        $("#cores > div").click(function () {
+            let cor = $(this).css("background-color");
+
+            if (corSelecionado == cor) {
+                voltar();
+                return;
+            } else if (corSelecionado && corSelecionado != cor) {
+                alert("Já há um quadrado selecionado. Desselecione-o para selecionar outro.");
+                return;
+            }
+
+            $(this).css({
+                "z-index": 900,
+                "border": "5px solid red"
+            });
+            selecionado = $(this);
+            corSelecionado = cor;
+
+        });
+
+        function voltar() {
+            selecionado.css({
+                "margin-top": 0,
+                "margin-left": 0,
+                "border": "2px solid black",
+                "z-index": 0
+            })
+            selecionado = null;
+            coordenadaHorizontal = 0;
+            coordenadaVertical = 0;
+            corSelecionado = null;
+        }
+
+        $("body").keydown(function (evento) {
+            if (evento.keyCode == 87) { //w
+                coordenadaVertical--;
+                selecionado.css("margin-top", coordenadaVertical + "%");
+            } else if (evento.keyCode == '83') { //s
+                coordenadaVertical++;
+                selecionado.css("margin-top", coordenadaVertical + "%");
+            } else if (evento.keyCode == '68') { // d
+                coordenadaHorizontal++;
+                selecionado.css("margin-left", coordenadaHorizontal + "%");
+            } else if (evento.keyCode == '65') { //a
+                coordenadaHorizontal--;
+                selecionado.css("margin-left", coordenadaHorizontal + "%");
+            }
+            
+            if (evento.keyCode == 38) { //seta cima
+                coordenadaVertical--;
+                selecionado.css("margin-top", coordenadaVertical + "%");
+            } else if (evento.keyCode == '37') { //seta esquerda 
+                coordenadaVertical++;
+                selecionado.css("margin-top", coordenadaVertical + "%");
+            } else if (evento.keyCode == '39') { //seta direita
+                coordenadaHorizontal++;
+                selecionado.css("margin-left", coordenadaHorizontal + "%");
+            } else if (evento.keyCode == '40') { //seta baixo
+                coordenadaHorizontal--;
+                selecionado.css("margin-left", coordenadaHorizontal + "%");
+            }
+        });
+
+    </script>
+</body>
+
+</html>

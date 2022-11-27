@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 1</title>
+    <script src="jquery-3.6.1.min.js"></script>
+    <style>
+        body {
+            padding-left: 5%;
+            background-color: black;
+            transition: .3s;
+        }
+
+        h1,
+        h2 {
+            color: white;
+            transition: .3s;
+        }
+
+        img {
+            width: 20%;
+            margin-left: 35%;
+            cursor: pointer;
+            transition: .3s;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Praticando 1 - JavaScript parte III</h1>
+
+    <h2>Lâmpada</h2>
+
+    <img src="lampada.png" alt="Lâmpada apagada">
+
+    <br>
+
+    <a href="P4.html" style="color: yellow;">Praticando 4</a>
+
+    <script>
+        $("img").mouseover(function () {
+            $("body").css("background-color", "white");
+            $("h1, h2").css("color", "black");
+            $("img").attr("src", "lampada-acesa.png");
+            $("a").css("color","black");
+
+        });
+
+        $("img").mouseout(function () {
+            $("body").css("background-color", "black");
+            $("h1, h2").css("color", "white");
+            $("img").attr("src", "lampada.png");
+            $("a").css("color","yellow");
+
+        });
+    </script>
+</body>
+
+</html>

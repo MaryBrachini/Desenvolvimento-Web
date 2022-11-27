@@ -1,0 +1,93 @@
+body {
+    padding-left: 5%;
+}
+
+.botao:hover {
+    background-color: rgb(218, 218, 218);
+}
+
+.paragrafos {
+    width: 60%;
+
+}
+
+.paragrafos p {
+    text-align: justify;
+    text-indent: 2%;
+    margin-bottom: 2%;
+    font-size: large;
+}
+
+.h1 {
+    margin-left: 10%;
+}
+
+.cores {
+    width: 80%;
+    height: 10vh;
+    margin-left: 10%;
+    border: 1px solid black;
+    display: flex;
+    cursor: pointer;
+}
+
+.cores>div {
+    width: 20%;
+    height: 100%;
+}
+
+.vermelho {
+    background-color: red;
+    border-right: 1px solid black;
+}
+
+.verde {
+    background-color: green;
+    border-right: 1px solid black;
+}
+
+.azul {
+    background-color: blue;
+    border-right: 1px solid black;
+}
+
+.amarelo {
+    background-color: yellow;
+    border-right: 1px solid black;
+}
+
+.roxo {
+    background-color: blueviolet;
+}
+
+.botao {
+    width: 5%;
+    height: 5vh;
+    margin-left: 10%;
+    margin-top: 2%;
+    cursor: pointer;
+}
+
+.caixa {
+    width: 12%;
+    height: 25vh;
+    margin-right: 2%;
+    border: 2px solid black;
+    cursor: pointer;
+    position: absolute;
+    transition: .1s;
+}
+
+#amarelo {
+    left: 20%;
+    background-color: rgb(233, 250, 85);
+}
+
+#rosa {
+    left: 35%;
+    background: rgb(255, 73, 240);
+}
+
+#azul {
+    background-color: rgb(0, 174, 255);
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 1</title>
+    <script src="jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <h1>Praticando 1 - JavaScript</h1>
+
+    <h2 id="nome"></h2>
+
+    <button type="button" id="adicionar">
+        Adicionar um novo paragrafo.
+    </button>
+
+    <button type="button" id="remover">
+        Remover todos os paragrafos
+    </button>
+
+    <div class="paragrafos" id="paragrafos"></div>
+
+    <br>
+
+    <a href="P2.html">Praticando 2</a>
+
+    <script>
+        let nome = prompt("Qual seu nome?");
+        var texto = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae officia iusto, iste excepturi ad repellendus tempore incidunt aliquam adipisci ipsum voluptate ullam asperiores ratione quo obcaecati dolor nam mollitia porro?";
+
+        document.getElementById("nome").innerText = "Seja bem vinde, " + nome;
+
+        $("#adicionar").click(function () {
+            $(".paragrafos").append("<p>" + texto + "</p>");
+        });
+
+        $("#remover").click(function () {
+            $(".paragrafos").empty();
+        });
+
+    </script>
+</body>
+
+</html>
