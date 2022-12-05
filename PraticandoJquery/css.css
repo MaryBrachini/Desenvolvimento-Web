@@ -22,42 +22,29 @@ body {
     margin-left: 10%;
 }
 
-.cores {
-    width: 80%;
-    height: 10vh;
-    margin-left: 10%;
-    border: 1px solid black;
+#paleta > *{
+    border: 2px solid black;
+    height: 50px;
+    width: 200px;
+}
+#paleta{
     display: flex;
-    cursor: pointer;
 }
 
-.cores>div {
-    width: 20%;
-    height: 100%;
-}
-
-.vermelho {
+#btn-red{
     background-color: red;
-    border-right: 1px solid black;
 }
-
-.verde {
+#btn-green{
     background-color: green;
-    border-right: 1px solid black;
 }
-
-.azul {
+#btn-blue{
     background-color: blue;
-    border-right: 1px solid black;
-}
-
-.amarelo {
+}   
+#btn-yellow{
     background-color: yellow;
-    border-right: 1px solid black;
 }
-
-.roxo {
-    background-color: blueviolet;
+#btn-fuchsia{
+    background-color: fuchsia;
 }
 
 .botao {
