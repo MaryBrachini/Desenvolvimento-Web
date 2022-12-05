@@ -5,67 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praticando 3</title>
-    <script src="jquery-3.6.1.min.js"></script>
+    <title>Praticando Cores</title>
     <link rel="stylesheet" href="css.css">
-
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
 
 <body id="body">
-    <h1 class="h1">Praticando 3 </h1>
-
-    <div class="cores">
-        <div class="vermelho"></div>
-        <div class="verde"></div>
-        <div class="azul"></div>
-        <div class="amarelo"></div>
-        <div class="roxo"></div>
+    <h1>Praticando 3 - JavaScript - Cores</h1>
+    <div id="paleta">
+        <button id="btn-red"></button>
+        <button id="btn-green"></button>
+        <button id="btn-blue"></button>
+        <button id="btn-yellow"></button>
+        <button id="btn-fuchsia"></button>
     </div>
-
-    <button class="botao">Reset</button>
-
     <br>
+    <button id="btnreset">Reset</button>
 
+    <br><br>
     <a href="P3.html">Praticando 3</a>
 
-
-    <script>
-        var corArmazenada = "";
-        var corAtual = "";
-        var corAtual2 = "";
-        var clicado = false;
-
-        $(".cores > div").click(function () {
-            let cor = $(this).css("background-color");
-
-            $("body").css("backgroundColor", cor);
-            clicado = true;
-        });
-
-        $(".cores > div").mouseover(function () {
-            let cor = $(this).css("background-color");
-            $("body").css("backgroundColor", cor);
-
-            if (cor != corAtual) {
-                corArmazenada = corAtual;
-            }
-            corAtual = cor;
-        });
-
-        $(".cores > div").mouseout(function () {
-            if (clicado == false) {
-                $("body").css("background-color", corArmazenada);
-            }
-            clicado = false;
-        });
-
-        $("button").click(function () {
-            corArmazenada = "white";
-            $("body").css("background-color", corArmazenada);
-            corAtual = "";
-        });
-
-    </script>
 </body>
+<script>
+    var corPadrao = "white";
+        const cores = ['red', 'green', 'blue', 'yellow', 'fuchsia'];
+        for (const cor of cores) {
+            $(`#btn-${cor}`).mouseover(() => {
+                $("body").css("backgroundColor", cor);
+            });
+            $(`#btn-${cor}`).mouseleave(() => {
+                $("body").css("backgroundColor", corPadrao);
+            });
+            $(`#btn-${cor}`).click(() => {
+                corPadrao = cor;
+                $("body").css("backgroundColor", cor);
+            });
+        }
+        $('#btnreset').click(() => {
+            corPadrao = 'white';
+            $("body").css("backgroundColor", 'white');
+        });
+
+</script>
 
 </html>
